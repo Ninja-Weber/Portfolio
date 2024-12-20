@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Know about me</title>
+
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.49/build/spline-viewer.js"></script>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            cursor: url("https://cur.cursors-4u.net/holidays/hol-4/hol336.cur"), auto !important;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            color: white;
+            line-height: 1.6;
+        }
+
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: rgb(45 45 45 / 50%);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.482);
+            position: fixed;
+            top: 19px;
+            left: 52px;
+            right: 52px;
+            z-index: 1000;
+            border-radius: 22px;
+        }
+
+        header img {
+            height: 40px;
+        }
+
+        header nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        /* About Section */
+        .about-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px;
+            background-color: #1A1A1A;
+        }
+
+        .about-left {
+            max-width: 50%;
+            margin: 25px;
+        }
+
+        .about-left h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .about-left p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .about-buttons-container {
+            margin-bottom: 20px;
+        }
+
+        .about-btn {
+            background-color: #9b59b6;
+            padding: 10px 20px;
+            color: white;
+            font-size: 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            display: inline-block;
+        }
+
+        .about-btn:hover {
+            background-color: #8e44ad;
+        }
+
+        .about-right img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+            height: 400px;
+            width: auto;
+        }
+
+        /* Main About Section */
+        .about-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 50px;
+            gap: 30px;
+            background-color: #000000;
+        }
+
+        /* Left Section (Text and Details) */
+        .about-left {
+            flex: 1;
+            padding: 20px;
+            max-width: 500px;
+        }
+
+        .about-left h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .about-details {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #000000;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: max-height 0.3s ease-in-out;
+            overflow: hidden;
+            border: 2px solid white;
+        }
+
+        .about-details[open] {
+            max-height: 500px;
+            overflow: visible;
+        }
+
+        .about-details summary {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffffff;
+            cursor: pointer;
+            padding: 10px;
+            background-color: #000000;
+            border: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .about-details summary:hover {
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        .about-details p {
+            font-size: 1rem;
+            color: #ffffff;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+
+        /* Right Section (Spline Viewer) */
+        .about-right {
+            flex: 1;
+            padding: 20px;
+            max-width: 600px;
+        }
+
+        spline-viewer {
+            width: 100%;
+            height: 500px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Styling for the content inside the details (the hidden part) */
+        .about-details p {
+            font-size: 1rem;
+            color: #555;
+            padding: 10px 0;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Optional: Add a plus or minus icon to show the state of the details (open/closed) */
+        .about-details[open] summary::before {
+            content: "− ";
+            margin-right: 10px;
+        }
+
+        .about-details summary::before {
+            content: "+ ";
+            margin-right: 10px;
+        }
+
+
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0a0a0a;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .content {
+            background-color: #111;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            border: 2px solid white;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+
+        .cta-button {
+            background-color: #ff0077;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: #e60066;
+        }
+
+
+
+        /* Section Styles */
+        .section {
+            padding: 50px;
+            margin-top: 20px;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        /* Smooth Scroll Styling for Anchor Links */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Optional: Add additional styles like buttons for Vision and Mission */
+    </style>
+</head>
+
+<body>
+
+
+    <header>
+        <div>Drumil</div>
+        <nav>
+            <a href="#projects">Projects</a>
+            <a href="index.html">Know me</a>
+        </nav>
+    </header>
+
+
+    <!-- Main About Section -->
+    <section class="about-section">
+        <div class="about-left">
+            <h1>Security and innovation are timeless.</h1>
+
+            <!-- Our Vision Section -->
+            <details id="vision" class="about-details" open>
+                <summary>My Vision</summary>
+                <p>I envision machine learning transforming cybersecurity by automating threat detection and response.
+                    ML will adapt in real-time, identifying and preventing emerging threats, while reducing human
+                    involvement. As cyberattacks evolve, ML will predict and mitigate risks, making systems more secure
+                    and resilient. The future of cybersecurity will be driven by intelligent, self-learning systems that
+                    protect data and defend against sophisticated threats.</p>
+            </details>
+
+            <!-- Our Mission Section -->
+            <details id="mission" class="about-details">
+                <summary>My Mission</summary>
+                <p>My mission is to enhance cybersecurity through the application of machine learning, developing
+                    innovative solutions to detect, prevent, and respond to evolving threats. I aim to strengthen
+                    security systems and contribute to a safer digital world.</p>
+            </details>
+        </div>
+
+        <div class="about-right">
+            <spline-viewer url="https://prod.spline.design/hpOfQg7NUIo3ib9p/scene.splinecode"></spline-viewer>
+        </div>
+    </section>
+
+
+    <div class="container">
+        <div class="content">
+            <h1>Transforming Ideas into Reality with Cutting-Edge Development!</h1>
+            <p>We turn complex challenges into innovative solutions, bringing your ideas to life with precision and
+                creativity. Whether it's enhancing performance, optimizing efficiency, or driving new possibilities, we
+                are committed to delivering exceptional results. Progress never stops, and neither do we.</p>
+                <button class="cta-button" onclick="window.location.href='game2.html';">Contact Us Now!</button>
+
+        </div>
+    </div>
+
+
+    <!-- Smooth Scrolling JavaScript -->
+    <script>
+        // Optional: Smooth Scroll Effect for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+    </script>
+</body>
+
+</html>
