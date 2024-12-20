@@ -1,0 +1,721 @@
+* {
+  cursor: url("https://cur.cursors-4u.net/holidays/hol-4/hol336.cur"), auto !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: rgb(45 45 45 / 50%);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.482);
+  position: fixed;
+  top: 19px;
+  left: 52px;
+  right: 52px;
+  z-index: 1000;
+  border-radius: 22px;
+}
+
+header img {
+  height: 40px;
+}
+
+header nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+
+/* Marquee Section */
+:root {
+  --marquee-width: 99vw;
+  --marquee-height: 20vh;
+  /* --marquee-elements: 12; */ /* Set dynamically in JavaScript */
+  --marquee-elements-displayed: 5;
+  --marquee-element-width: calc(var(--marquee-width) / var(--marquee-elements-displayed));
+  --marquee-animation-duration: calc(var(--marquee-elements) * 3s);
+}
+
+.marquee {
+  width: var(--marquee-width);
+  height: var(--marquee-height);
+  background-color: #000000;
+  color: #eee;
+  overflow: hidden;
+  position: relative;
+  margin: 50px auto; /* Center the marquee with some spacing */
+}
+
+.marquee:before,
+.marquee:after {
+  position: absolute;
+  top: 0;
+  width: 10rem;
+  height: 100%;
+  content: "";
+  z-index: 1;
+}
+
+.marquee:before {
+  left: 0;
+  background: linear-gradient(to right, #111 0%, transparent 100%);
+}
+
+.marquee:after {
+  right: 0;
+  background: linear-gradient(to left, #111 0%, transparent 100%);
+}
+
+.marquee-content {
+  list-style: none;
+  height: 100%;
+  display: flex;
+  animation: scrolling var(--marquee-animation-duration) linear infinite;
+}
+
+@keyframes scrolling {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-1 * var(--marquee-element-width) * var(--marquee-elements)));
+  }
+}
+
+.marquee-content li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: var(--marquee-element-width);
+  max-height: 100%;
+  font-size: calc(var(--marquee-height) * 3 / 4); /* Dynamically set font size */
+  white-space: nowrap;
+}
+
+.marquee-content li img {
+  width: 100%;
+  border: 2px solid #eee;
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 12px;
+  }
+
+  :root {
+    --marquee-width: 100vw;
+    --marquee-height: 16vh;
+    --marquee-elements-displayed: 3;
+  }
+
+  .marquee:before,
+  .marquee:after {
+    width: 5rem;
+  }
+}
+
+/* Add your remaining sections below */
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+#model-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.overlay {
+  position: relative;
+  z-index: 1;
+}
+
+.blur-box {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 20px 40px;
+  display: inline-block;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  margin-top: 358px;
+}
+
+.blur-box h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+.blur-box p {
+  font-size: 1.2em;
+  margin: 10px 0 0;
+}
+
+/* Include all other sections from your original CSS */
+
+
+/* Animated Text */
+#animated-text {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: white;
+}
+
+#animated-text span {
+  display: inline-block;
+  transform: scale(0);
+  animation: fade-in 0.3s ease forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Features Section */
+.features {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 50px 20px;
+  background: #1c1c1c;
+  flex-wrap: wrap;
+}
+
+.feature-box {
+  position: relative;
+  flex: 1;
+  min-width: 300px;
+  max-width: 650px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: left;
+  transition: box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.feature-box::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border-radius: 20px;
+  border: 2px solid #0084ff;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.feature-box:hover::before {
+  opacity: 1;
+}
+
+.feature-box img {
+  max-width: 40%;
+  height: auto;
+  border-radius: 15px;
+}
+
+.feature-content {
+  color: #fff;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.feature-content h2 {
+  font-size: 1.5em;
+  margin: 10px 0;
+  color: #0084ff;
+}
+
+.feature-content p {
+  font-size: 1em;
+  color: #ccc;
+}
+
+.feature-box:hover {
+  box-shadow: 0 0 10px rgba(0, 132, 255, 0.7);
+}
+
+.model-container {
+  max-width: 100%;
+  height: 300px;
+  margin-top: 20px;
+}
+
+.spline-viewer {
+  width: 100%;
+  height: 100%;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 50px 20px;
+  background: #000000;
+}
+
+.gallery div {
+  text-align: center;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #333;
+  color: white;
+}
+
+/* Projects Section */
+.projects {
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+  background: #000000;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.projects-row-wrapper {
+  position: relative;
+  overflow: hidden;
+  margin-top: 25px;
+}
+
+.projects-row {
+  display: flex;
+  gap: 20px; /* Add gap between cards */
+  animation: scroll 20s linear infinite;
+}
+
+.project-card {
+  min-width: 250px;
+  height: 350px;
+  background: #1a1a1a;
+  color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid white;
+}
+
+.project-card h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+
+.project-video {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.project-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-link {
+  margin-top: 10px;
+  text-decoration: none;
+  background-color: #e38afb;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 5px;
+}
+
+.project-link:hover {
+  background-color: #c966d2;
+}
+
+/* Infinite Scrolling Animation */
+.left-to-right {
+  animation: scroll-left-to-right 20s linear infinite;
+}
+
+.right-to-left {
+  animation: scroll-right-to-left 20s linear infinite;
+}
+
+/* Animation Definitions */
+@keyframes scroll-left-to-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes scroll-right-to-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+
+
+
+
+/* About Section (Merged) */
+.about-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 50px 10%;
+}
+
+.about-left {
+  max-width: 45%;
+  color: white;
+}
+
+.about-left h3 {
+  color: #00e6ff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.about-left h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.about-left p {
+  margin: 20px 0;
+  line-height: 1.6;
+  color: #aaa;
+}
+
+.about-btn {
+  background-color: #db4dc6;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.about-btn:hover {
+  background-color: #b63b9f;
+}
+
+.about-right {
+  max-width: 45%;
+}
+
+.vision-box,
+.mission-box {
+  border-radius: 50px;
+  margin-bottom: 20px;
+  padding: 20px 30px;
+}
+
+.vision-box {
+  background-color: #db4dc6;
+}
+
+.vision-header,
+.mission-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.mission-box {
+  background: transparent;
+  border: 2px solid #fff;
+}
+
+.icon {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+
+
+.mission-box button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px; /* Reduced padding */
+  background-color: #000000; /* Dark background */
+  color: #fff;
+  font-size: 1.0em; /* Reduced font size */
+  border: none; /* Remove button border */
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.mission-box button:hover {
+  background-color: #000000; /* Lighter background on hover */
+}
+
+.icon {
+  font-size: 1.2em; /* Slightly smaller icon */
+}
+
+
+
+
+
+
+
+/* Typing animation container */
+.typing-animation {
+  overflow: hidden; /* Ensures the text doesn't overflow */
+  white-space: nowrap; /* Keeps the text on a single line */
+  border-right: 3px solid #000000; /* Blinking cursor */
+  font-size: 2.5em; /* Keep the original text size */
+  margin: 0 auto; /* Centering */
+  width: 0; /* Start with no width */
+  opacity: 0; /* Initially hidden */
+  animation: none; /* Don't animate yet */
+}
+
+/* Typing keyframes */
+@keyframes typing {
+  from {
+    width: 0; /* Start with no width */
+  }
+  to {
+    width: 100%; /* Reveal the full text */
+  }
+}
+
+/* Blinking cursor keyframes */
+@keyframes blink {
+  50% {
+    border-color: transparent; /* Blinking effect */
+  }
+}
+
+
+
+
+
+/* Main Container */
+.review-container {
+  display: flex;
+  overflow: hidden; /* Hide the overflowed content */
+  white-space: nowrap; /* Prevent the cards from wrapping */
+  position: relative;
+  background-color: #000000;
+}
+
+/* Infinite Scrolling Animation */
+@keyframes scrollCards {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Scroll the content by 50% of its width */
+  }
+}
+
+/* Card Wrapper for Repeated Content */
+.card-wrapper {
+  display: inline-flex;
+  animation: scrollCards 20s linear infinite; /* Adjust duration for speed */
+  flex-shrink: 0;
+}
+
+/* Individual Review Card */
+.review-card {
+  background-color: #111;
+  color: #ccc;
+  width: 350px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  font-family: Arial, sans-serif;
+  text-align: left;
+  margin: 0 15px; /* Space between cards */
+  border: 2px solid white;
+  display: inline-block; /* Ensure cards stay in one line */
+  white-space: normal; /* Allow text wrapping inside the card */
+  flex-shrink: 0; /* Prevent cards from shrinking */
+}
+
+/* Top Decoration */
+.review-card::before {
+  content: '“';
+  font-size: 50px;
+  color: #00e6ff;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+/* Profile Section */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.profile img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #00e6ff;
+}
+
+.profile h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 1.5em;
+}
+
+.profile h3 {
+  margin: 5px 0 0;
+  color: #aaa;
+  font-size: 1em;
+}
+
+/* Star Ratings */
+.stars {
+  color: gold;
+  margin: 10px 0;
+}
+
+/* Review Content */
+.review-content {
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+
+
+
+/* Counters Section */
+.counters-section {
+  padding: 40px 20px;
+  background: #000000;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+.counters-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.counter-box {
+  flex: 1 1 calc(25% - 40px);
+  max-width: 200px;
+  background: #202020;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border: 2px solid white;
+}
+
+.counter-box h3 {
+  font-size: 2rem;
+  color: #db4dc6;
+  margin: 0;
+}
+
+.counter-box p {
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+/* Animation */
+.counter {
+  animation: fade-in 0.5s ease-in-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
