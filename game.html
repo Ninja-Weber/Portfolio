@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enjoying game</title>
+  <style>
+    /* Make the body and html fill the entire screen */
+    html, body {
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+    }
+    /* Make the spline viewer take up the whole screen */
+    spline-viewer {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.50/build/spline-viewer.js"></script>
+  <spline-viewer url="https://prod.spline.design/meOgS9csS9EKsdiI/scene.splinecode"></spline-viewer>
+
+  <script>
+    // Show alert message when the user visits the page
+    window.onload = function() {
+      alert("This page is still in the development phase.");
+    }
+  </script>
+
+</body>
+</html>
